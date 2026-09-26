@@ -1,0 +1,7 @@
+if [ -n "$KITTY_WINDOW_ID" ] && command -v kitty >/dev/null 2>&1; then
+    kitty +kitten icat --clear --silent < /dev/null > /dev/tty
+fi
+
+if [ -n "$FIFO_UEBERZUG" ]; then
+    printf '{"action":"remove","identifier":"PREVIEW"}\n' > "$FIFO_UEBERZUG"
+fi

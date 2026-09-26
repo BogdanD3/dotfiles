@@ -1,0 +1,39 @@
+{
+  "battery": {
+    //"bat": "BAT1",
+    // "adapter":
+    // "design-capacity":
+    // "full-at":
+    // "interval":
+    "states": {
+      "warning": 20,
+      "warning-low": 15,
+      "critical": 10,
+    },
+    "format": "{icon} {capacity}%",
+    "format-time": "{H} hr {M} min",
+    "format-icons": ["󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "󰉁 {capacity}%",
+    "min-length": 7,
+    "max-length": 7,
+    // "rotate":
+    // "on-click":
+    // "on-click-middle":
+    // "on-click-right":
+    // "on-scroll-up":
+    // "on-scroll-down":
+    // "smooth-scrolling-threshold":
+    // "tooltip":
+    "tooltip-format": "Discharging: {time}",
+    "tooltip-format-charging": "Charging: {time}",
+    // "weighted-average":
+    // "bat-compatibility":
+    "events": {
+      "on-discharging-warning": "dunstify 'Low Battery' '{capacity}% battery remaining' -a 'Battery Monitor' -u normal -r 9991 && paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga",
+      "on-discharging-warning-low": "dunstify 'Low Battery' '{capacity}% battery remaining' -a 'Battery Monitor' -u critical -r 9992 && paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga",
+      "on-discharging-critical": "dunstify 'Low Battery' '{capacity}% battery remaining' -a 'Battery Monitor' -u critical -r 9993 && paplay /usr/share/sounds/freedesktop/stereo/dialog-error.oga",
+      "on-charging-100": "dunstify 'Battery full' 'Battery is at {capacity}%' -a 'Battery Monitor' -u low -r 9994 && paplay /usr/share/sounds/freedesktop/stereo/complete.oga",
+      "on-charging": "dunstify 'Charger Plugged In' 'Charging started ({capacity}%)' -a 'Battery Monitor' -u low -r 9995 && paplay /usr/share/sounds/freedesktop/stereo/device-added.oga",
+    },
+  },
+}

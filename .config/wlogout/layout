@@ -1,0 +1,37 @@
+{
+    "label": "shutdown",
+    "action": "systemctl poweroff",
+    "text": "Shutdown",
+}
+
+{
+    "label": "reboot",
+    "action": "systemctl reboot",
+    "text": "Reboot",
+}
+
+{
+    "label": "logout",
+    "action": "hyde-shell logout",
+    "text": "Logout",
+}
+
+{
+    "label": "suspend",
+    "action": "lockscreen.sh & disown && systemctl suspend",
+    "text": "Suspend",
+}
+
+{
+    "label": "lock",
+    "action": "hyprlock",
+    "text": "Lock",
+}
+
+{
+    "label": "hibernate",
+    "action": "systemctl hibernate",
+    "text": "Hibernate",
+}
+
+

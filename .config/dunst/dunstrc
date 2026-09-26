@@ -1,0 +1,61 @@
+[global]
+# Display
+width = 300
+height = (0, 350)
+origin = top-right
+offset = (30, 30)
+indicate_hidden = yes
+notification_limit = 5
+gap_size = 14
+padding = 16
+horizontal_padding = 20
+frame_width = 1
+corner_radius = 12
+
+# Text
+font = "Noto Sans CJK JP 10"
+markup = full
+format = "<small>%a</small>\n<big><b>%s</b></big>\n%b"
+alignment = left
+vertical_alignment = center
+show_age_threshold = -1
+hide_duplicate_count = false
+
+# Colors
+background = "#1f1b2e"
+foreground = "#e0d7f3"
+frame_color = "#30253f"
+highlight = "#9b59b6, #b085f5"
+
+# Progress bar (supported options only)
+progress_bar_frame_width = 0
+progress_bar_corner_radius = 4
+
+# Icon
+icon_position = left
+min_icon_size = 56
+max_icon_size = 80
+icon_path = /usr/share/icons/Arc/status/96:/usr/share/icons/Arc/status/symbolic
+icon_corner_radius = 6
+
+# Mouse
+mouse_left_click = close_current
+mouse_middle_click = do_action, close_current
+mouse_right_click = close_all
+
+# Misc
+dmenu = wofi --show drun --prompt 'Open with'
+
+[urgency_low]
+timeout = 3
+
+[urgency_normal]
+timeout = 8
+
+[urgency_critical]
+background = "#8b0000"
+foreground = "#ffffff"
+frame_color = "#ff0000"
+timeout = 0
+override_pause_level = 60
+highlight = "#e31e1b, #ff5555"

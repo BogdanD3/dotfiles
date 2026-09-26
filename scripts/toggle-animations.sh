@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+cache_file="$HOME/.cache/toggle_animation"
+if [[ $(cat $HOME/.config/hypr/hyprland.conf) == *"disabled"* ]]; then
+    echo ":: Toggle blocked by disabled.conf variation."
+else
+    if [ -f $cache_file ]; then
+        hyprctl keyword animations:enabled true
+        rm $cache_file
+	notify-send "turned on"
+    else
+        hyprctl keyword animations:enabled false
+        touch $cache_file
+	nofity-send "turned off"
+    fi
+fi
+
+

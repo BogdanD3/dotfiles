@@ -1,0 +1,44 @@
+# Core
+set ratios "1:2:3"
+
+set icons          true
+set ignorecase     true
+set drawbox        true
+set dircounts      true
+set info           size:time
+set number         true
+set relativenumber true
+
+cmd open ${{
+    setsid -f ~/.config/lf/opener "$f"
+}}
+
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/previewer-kitty'
+
+source '~/.config/lf/lf-keybinds'
+
+#making files and folders
+
+EDITOR=nvim
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  nvim $ans
+}}
+
+cmd javafile ${{
+    $HOME/scripts/new-java-file.sh  "$PWD"
+}}
+
+set colors 'di=141'
+
+map a mkfile
+map A mkdir

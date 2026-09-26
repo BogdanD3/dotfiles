@@ -1,0 +1,116 @@
+configuration {
+    modes: "combi,window,run,drun,ssh";
+    combi-modes: "window,run,drun";
+
+    show-icons: true;
+    sorting-method: "fzf";
+    matching: "fuzzy";
+    drun-match-fields: "name,generic,exec,categories";
+
+    display-combi: "MENU";
+    display-run: "RUN";
+    display-ssh: "SSH";
+    display-drun: "APPS";
+    display-window: "WINDOWS";
+
+    font: "Iosevka Nerd Font 13";
+}
+
+@theme "tokyo"
+
+* {
+    text-color:         #9136c9;
+    background-color:   transparent;
+    margin:             0px;
+    padding:            0px;
+}
+
+window {
+    location:           center;
+    width:              640;
+    y-offset:           -10;
+    border-radius:      20px;
+    border:             1px;
+    border-color:       #9136c9;
+    background-color:   rgba(20, 22, 30, 0.65);
+}
+
+mainbox {
+    padding: 16px;
+    spacing: 12px;
+}
+
+inputbar {
+    background-color:   rgba(30, 34, 46, 0.6);
+    border-color:       #9136c9;
+    border-radius:      14px;
+    border:             2px;
+    padding:            8px 16px;
+    spacing:            10px;
+    children:           [ prompt, entry ];
+}
+
+prompt {
+    text-color: #2b68ed;
+}
+
+entry {
+    placeholder: "› search...";
+    placeholder-color: #5881db;
+}
+
+listview {
+    background-color:   transparent;
+    margin:             12px 0 0;
+    columns:            1;
+    lines:              8;
+    spacing:            6px;
+    dynamic:            true;
+}
+
+element {
+    padding:        8px 16px;
+    spacing:        8px;
+    border-radius:  10px;
+    text-color:     #5881db;
+}
+
+element normal urgent {
+  text-color: #f7768e;
+}
+
+element normal active {
+    text-color: #7dcfff;
+}
+
+element selected normal, element selected active {
+    background-color: rgba(125, 207, 255, 0.1);
+    text-color: #2b68ed;
+}
+
+element-icon {
+    size: 1.2em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+mode-switcher {
+    padding: 10px 0 0;
+    border-radius: 12px;
+    background-color: rgba(30, 34, 46, 0.5);
+    spacing: 8px;
+}
+
+button {
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-color: #a9b1d6;
+}
+
+button selected {
+    background-color: rgba(125, 207, 255, 0.15);
+    text-color: #7dcfff;
+}

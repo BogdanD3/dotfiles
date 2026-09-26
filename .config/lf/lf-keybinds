@@ -1,0 +1,37 @@
+# ~/.config/lf/lf-keybinds
+
+# --- Navigation ---
+map gD cd ~/downloads
+map gS cd ~/.local/bin/scripts
+map gW cd ~/.local/share/wallpapers
+map gb $lf -remote "send $id cd $OLDPWD"
+map gc cd ~/.config
+map gd cd ~/dev
+map gh cd ~/hacking
+map gm cd ~/music
+map go cd ~/documents/obsidian
+map gp cd ~/documents/pdfs
+map gs cd ~/pictures/screenshots
+map gv cd ~/Videos/Screen-recordings
+map gw cd ~/dev/web-server
+
+map e $nvim "$f"
+map C clear
+#map D shell mv -n -t /tmp -- %s
+map D delete
+# --- File selection: Copy / Cut / Paste ---
+# These work for both files and folders, including multiple selections
+map c copy
+map x cut
+map p paste
+
+
+# --- Rename ---
+map r :rename; cmd-home
+
+# --- Toggle hidden files ---
+map . :set hidden!; echo "Hidden files: $hidden"
+
+map R :source ~/.config/lf/lfrc; source ~/.config/lf/lf-keybinds; echo "Reloaded config and keybinds"
+
+map T !kitty --directory "$PWD" &
